@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node .",
-    "build": "npm install"
+    "build": "npm install && npx playwright install"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -15,7 +15,6 @@
     "jade": "^0.29.0",
     "jsdom": "^23.2.0",
     "morgan": "~1.9.1",
-    "playwright-core": "^1.40.1",
-    "@playwright/browser-firefox": "^1.40.1"
+    "playwright": "^1.40.1"
   }
 }
