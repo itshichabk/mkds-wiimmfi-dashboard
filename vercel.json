@@ -1,4 +1,4 @@
 {
     "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }],
-    "installCommand": "npm install && npx playwright i"
+    "installCommand": "npm install && npx playwright install"
 }
