@@ -1,0 +1,64 @@
+td
+{
+    background-color: #3840F0;
+    text-shadow: 0px 1px 0px black;
+    height: 48px;
+}
+
+tr td:first-of-type
+{
+    width: 240px;
+}
+
+tr td:nth-of-type(2)
+{
+    width: 160px;
+}
+
+tr td:last-of-type
+{
+    width: 400px;
+}
+
+.joined td
+{
+    background-color: #6060F8;
+}
+
+.searching td
+{
+    color: yellow;
+    text-shadow: 0px 1px 0px #796300;
+    /*text-shadow: 0px 0px 18px yellow;*/
+    /*animation: searching 5s ease infinite;*/
+
+    /*background: rgb(56,64,240);
+    background: linear-gradient(180deg, rgba(56,64,240,1) 29%, rgba(255,222,0,1) 100%);
+    */
+    /*background: rgb(56,64,240);
+    background: linear-gradient(90deg, rgba(56,64,240,1) 0%, rgba(125,114,0,1) 100%);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;*/
+}
+
+.searching td:last-of-type
+{
+    font-style: italic;
+}
+
+@keyframes searching
+{
+    0% {     text-shadow: 0px 0px 18px yellow;    }
+    50% {     text-shadow: 0px 1px 18px white; }
+    100% {     text-shadow: 0px 0px 18px yellow;    }
+}
+
+.playing td
+{
+    background-color: #258020;
+}
+
+.friends td
+{
+    background-color: #570080;
+}

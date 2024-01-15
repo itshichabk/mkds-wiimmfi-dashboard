@@ -1,0 +1,25 @@
+body
+{
+    color: white;
+    margin: 0;
+    background-color: #586F98;
+    background-image: url("assets/bg.png");
+}
+
+*
+{
+    font-family: "ds_bios";
+    font-size: 24px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: ds_bios;
+    src: url("assets/ds_bios.ttf");
+}
+
+@font-face {
+    font-family: mkds;
+    src: url("assets/mkds.ttf");
+}

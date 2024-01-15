@@ -1,0 +1,25 @@
+table, th, td
+{
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+
+table
+{
+    box-shadow: 4px 4px 0px black;
+    margin: 18px auto;
+}
+
+th, td
+{
+    padding: 4px;
+    text-align: center;
+}
+
+th
+{
+    background-color: #18C0F8;
+    color: black;
+    height: 36px;
+}
+
