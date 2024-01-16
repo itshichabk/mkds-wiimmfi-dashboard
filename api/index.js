@@ -4,6 +4,9 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const cors = require("cors");
 
+const dirTree = require("directory-tree");
+const tree = dirTree("./");
+
 class Player
 {
     constructor(fc, status, name)
