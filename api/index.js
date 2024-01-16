@@ -36,7 +36,7 @@ console.log(treee);
 }
 })();
 
-app.get('/', async (req, res) => 
+app.get('/api', async (req, res) => 
 {
     if(initialized && !fetching)
     {
