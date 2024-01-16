@@ -15,6 +15,7 @@
     "jade": "^0.29.0",
     "jsdom": "^23.2.0",
     "morgan": "~1.9.1",
-    "playwright": "^1.40.1"
+    "playwright": "^1.40.1",
+    "directory-tree": "^3.5.1"
   }
 }
