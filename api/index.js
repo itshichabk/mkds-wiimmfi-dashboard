@@ -1,3 +1,5 @@
+process.env.PLAYWRIGHT_BROWSERS_PATH = 0;
+
 const app = require('express')();
 const { firefox } = require('playwright');
 const jsdom = require("jsdom");
@@ -27,15 +29,15 @@ let page;
 let fetching = false;
 
 (async()=>{
-try {
+//try {
     const browser =  await firefox.launch(/*{executablePath: './node_modules/playwright-core/.local-browsers/firefox-1429/firefox/firefox'}*/);
     page = await browser.newPage();
     console.log("Browser and page initialized")
     initialized = true;
-} catch(e) { error = e;
+/*} catch(e) { error = e;
 let treee = dirTree("./");
 console.log(treee);
-}
+}*/
 })();
 
 app.get('/api', async (req, res) => 
@@ -118,6 +120,6 @@ app.get('/api', async (req, res) =>
     else
     {
 console.log(tree);
-        res.status(503).send(error);
+        res.status(503).send("Server busy");
     }
 });
