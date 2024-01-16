@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node .",
-    "build": "npm install && npx playwright install"
+    "build": "npm install && npx playwright install firefox --with-deps"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
