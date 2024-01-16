@@ -5,7 +5,9 @@ const { JSDOM } = jsdom;
 const cors = require("cors");
 
 const dirTree = require("directory-tree");
-const tree = dirTree("./");
+const tree = dirTree("./node-modules");
+
+let error;
 
 class Player
 {
@@ -30,7 +32,7 @@ try {
     page = await browser.newPage();
     console.log("Browser and page initialized")
     initialized = true;
-} catch(e) {
+} catch(e) { error = e;
 let treee = dirTree("./");
 console.log(treee);
 }
@@ -115,6 +117,7 @@ app.get('/api', async (req, res) =>
     }
     else
     {
-        res.status(503).send("Server busy, please try again.");
+console.log(tree);
+        res.status(503).send(error);
     }
 });
