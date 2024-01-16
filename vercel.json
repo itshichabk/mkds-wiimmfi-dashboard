@@ -1,4 +1,4 @@
 {
     "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }],
-    "installCommand": "npm install && cd api && npm install && npx playwright install firefox && ls -R"
+    "installCommand": "npm install && cd api && npm install && npx playwright install firefox && ls .local-browsers-R"
 }
