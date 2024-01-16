@@ -28,7 +28,7 @@ let fetching = false;
 
 (async()=>{
 try {
-    const browser =  await firefox.launch({executablePath: './node_modules/playwright-core/.local-browsers/firefox-1429/firefox/firefox'});
+    const browser =  await firefox.launch(/*{executablePath: './node_modules/playwright-core/.local-browsers/firefox-1429/firefox/firefox'}*/);
     page = await browser.newPage();
     console.log("Browser and page initialized")
     initialized = true;
