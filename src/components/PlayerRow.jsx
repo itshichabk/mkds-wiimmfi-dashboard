@@ -8,7 +8,8 @@ function PlayerRow({player, joined}) {
         { joined ? "joined" :
           player.status == 2 ? "searching" :
           player.status == 3 ? "playing" : 
-          player.status == 4 || player.status == 5 ? "searching friends" : ""}>
+          player.status == 4 ? "searching friends" : 
+          player.status == 5 ? "friends" : ""}>
 
         <td>{player.name}</td>
         <td>{player.fc}</td>
