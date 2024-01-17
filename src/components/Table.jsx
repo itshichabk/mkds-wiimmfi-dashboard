@@ -6,7 +6,7 @@ import './Table.css'
 import joinSound from '../assets/join.wav'
 import leaveSound from '../assets/leave.wav'
 
-export default function Table({updateInterval, countdown}) {
+export default function Table({updateInterval, countdown, soundOn}) {
 
     const [players, setPlayers] = useState([]);
     const [fetching, setFetching] = useState(false);
@@ -53,14 +53,15 @@ export default function Table({updateInterval, countdown}) {
         setLeft(left);
         setJoined(joined);
 
-        if(joined.length != 0) { playJoin(); }
-        else if(left.length != 0) { playLeave(); }
+        if(soundOn) {
+            if(joined.length != 0) { playJoin(); }
+            else if(left.length != 0) { playLeave(); }    
+        }
 
     }, [joined, left])
 
     useEffect(() => {
-        if((firstFetch || countdown == updateInterval) && !fetching)
-        {
+        if((firstFetch || countdown == updateInterval) && !fetching) {
             fetchPlayers();
         }
     }, [countdown]);

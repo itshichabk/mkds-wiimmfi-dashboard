@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import Table from './components/Table'
-import Countdown from './components/Countdown';
+import Options from './components/Options';
+import Footer from './components/Footer';
 
 function App() {
-  const defaultInterval = 10;
+  const defaultInterval = 5;
   const [updateInterval, setUpdateInterval] = useState(defaultInterval);
   const [countdown, setCountdown] = useState(defaultInterval);
+  const [soundOn, setSoundOn] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => { countdown == 0 ? setCountdown(updateInterval) : setCountdown(countdown - 1) }, 1000);
@@ -18,12 +20,13 @@ function App() {
       <div className='title'>
         <div>
           <h1>MARIO KART DS Wiimmfi Dashboard</h1>
-          <h4>by <a href="https://github.com/itshichabk" target='_blank'>itshichabk</a></h4>
-          <p>Data fetched from <a href="https://wiimmfi.de/stats/game/mariokartds">wiimmfi.de</a> using Puppeteer</p>
+          {/*<h4>by <a href="https://github.com/itshichabk" target='_blank'>itshichabk</a></h4>*/}
+          <p>Data scraped from <a href="https://wiimmfi.de/stats/game/mariokartds" target='_blank'>wiimmfi.de</a>{/*. Frontend powered by React. Backend powered by Puppeteer, Express.js and Node.*/}</p>
         </div>
       </div>
-      <Countdown setInterval={setUpdateInterval} setCountdown={setCountdown} countdown={countdown}/>
-      <Table updateInterval={updateInterval} countdown={countdown}/>
+      <Options setInterval={setUpdateInterval} setCountdown={setCountdown} countdown={countdown} setSoundOn={setSoundOn}/>
+      <Table updateInterval={updateInterval} countdown={countdown} soundOn={soundOn}/>
+      <Footer/>
     </main>
   )
 }

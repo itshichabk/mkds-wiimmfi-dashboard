@@ -1,0 +1,21 @@
+main footer
+{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background-color: black;
+    padding: 12px 0;
+}
+
+footer p, footer a
+{
+    margin: 0;
+    line-height: 1em;
+    font-size: 21px;
+}
+
+footer a
+{
+    color: yellow;
+}

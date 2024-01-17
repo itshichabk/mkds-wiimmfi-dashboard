@@ -2,7 +2,6 @@ main
 {
     margin: auto;
     text-align: center;
-    height: 100vh;
 }
 
 h1, h2, h3
@@ -23,9 +22,19 @@ h1, h2, h3
     margin-top: 64px;
 }
 
-.title h1, .title h4
+.title h1
 {
     margin: 0
+}
+
+.title p
+{
+    margin: 0.2em 0;
+}
+
+.title h4
+{
+    margin: 0.2em 0 0.6em 0;
 }
 
 .title h1
@@ -47,7 +56,6 @@ h1, h2, h3
 .title p, .title p a
 {
     font-size: 24px;
-    margin: 0;
 }
 
 .title a
@@ -57,12 +65,12 @@ h1, h2, h3
 
 .title div
 {
-    padding: 12px 0;
+    padding: 12px 24px;
     border-top: 3px solid yellow;
     border-bottom: 3px solid yellow;
 }
 
-h3
+main h3
 {
     font-size: 36px;
     margin-top: 64px;
