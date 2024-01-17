@@ -19,7 +19,7 @@ function App() {
         <div>
           <h1>MARIO KART DS Wiimmfi Dashboard</h1>
           <h4>by <a href="https://github.com/itshichabk" target='_blank'>itshichabk</a></h4>
-          <p>Data fetched from <a href="https://wiimmfi.de/stats/game/mariokartds">wiimmfi.de</a> using Playwright</p>
+          <p>Data fetched from <a href="https://wiimmfi.de/stats/game/mariokartds">wiimmfi.de</a> using Puppeteer</p>
         </div>
       </div>
       <Countdown setInterval={setUpdateInterval} setCountdown={setCountdown} countdown={countdown}/>
