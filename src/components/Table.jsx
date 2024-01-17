@@ -24,7 +24,7 @@ export default function Table({updateInterval, countdown}) {
         setFetching(true);
         try
         {
-            const res = await fetch('https://mkds-wiimmfi-dashboard.vercel.app/api');
+            const res = await fetch('https://mkds-wiimmfi-stats-api.onrender.com');
             const playersJSON = await res.json();
 
             if(!firstFetch)
