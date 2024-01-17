@@ -67,32 +67,33 @@ export default function Table({updateInterval, countdown, soundOn}) {
     }, [countdown]);
     
     return (
-        <>
-        { firstFetch ? <h3>Fetching players...</h3> :
-            !firstFetch && !fetchSuccess ? <h3>Error when trying to connect to API.</h3> :
-            (players.length == 0 && !firstFetch) ? <h3>No players online...</h3> : 
-            !firstFetch ?
-            <>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Friend code</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {players.map((player) => 
-                            <PlayerRow player={player} key={player.fc} 
-                                joined={ joined.find(p => p.fc == player.fc) ? true : false }
-                            />)
-                        }
-                    </tbody>
-                </table> 
-            </>
-            : null
-        }
-        { fetching && !firstFetch ? <p>Updating...</p> : null }
-        </>
+        <div className='table-container'>
+            { firstFetch ? <h3>Fetching players...</h3> :
+                !firstFetch && !fetchSuccess ? <h3>Error when trying to connect to API.</h3> :
+                (players.length == 0 && !firstFetch) ? <h3>No players online...</h3> : 
+                !firstFetch ?
+                <>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Friend code</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {players.map((player) => 
+                                <PlayerRow player={player} key={player.fc} 
+                                    joined={ joined.find(p => p.fc == player.fc) ? true : false }
+                                />)
+                            }
+                        </tbody>
+                    </table> 
+                </>
+                : null
+            }
+            <p>Updating...</p>
+            { fetching && !firstFetch ? <p>Updating...</p> : null }
+        </div>
     )
 }

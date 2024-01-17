@@ -2,12 +2,18 @@ table, th, td
 {
     border: 2px solid white;
     border-collapse: collapse;
+    margin: auto;
+}
+
+.table-container
+{
+    margin: 18px auto 96px auto;
 }
 
 table
 {
     box-shadow: 4px 4px 0px black;
-    margin: 18px auto;
+    margin-bottom: 16px;
 }
 
 th, td
@@ -22,4 +28,3 @@ th
     color: black;
     height: 36px;
 }
-

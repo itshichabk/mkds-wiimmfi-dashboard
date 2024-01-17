@@ -53,13 +53,6 @@ body
     background-color: #586F98;
     background-image: url("assets/bg.png");
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-html,body {
-    height: 100%;
-    overflow-x: hidden;
 }
 
 *

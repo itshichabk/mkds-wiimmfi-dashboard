@@ -8,7 +8,6 @@ p, label, span
     width: 100%;
     background-color: #2027F8;
     padding: 8px 0;
-    margin-bottom: 64px;
 }
 
 .options > div
@@ -56,7 +55,7 @@ select
     margin: auto;
 }
 
-.flex p, .flex span, .flex label
+.flex p, .flex span
 {
     line-height: 0;
 }
