@@ -92,7 +92,6 @@ export default function Table({updateInterval, countdown, soundOn}) {
                 </>
                 : null
             }
-            <p>Updating...</p>
             { fetching && !firstFetch ? <p>Updating...</p> : null }
         </div>
     )
