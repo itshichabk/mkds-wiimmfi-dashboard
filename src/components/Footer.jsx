@@ -6,7 +6,6 @@ function Footer() {
     <footer>
         <p>A personal project by itshichabk.</p>
         <p>Source code : <a href="https://github.com/itshichabk/mkds-wiimmfi-dashboard" target='_blank'>Website</a>, <a href="https://github.com/itshichabk/mkds-wiimmfi-dashboard-api" target='_blank'>API</a></p>
-
     </footer>
   )
 }

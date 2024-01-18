@@ -20,7 +20,7 @@ function App() {
       <div className='title'>
         <div>
           <h1>MARIO KART DS Wiimmfi Dashboard</h1>
-          <p>Data scraped from <a href="https://wiimmfi.de/stats/game/mariokartds" target='_blank'>wiimmfi.de</a>{/*. Frontend powered by React. Backend powered by Puppeteer, Express.js and Node.*/}</p>
+          <p>Data scraped from <a href="https://wiimmfi.de/stats/game/mariokartds" target='_blank'>wiimmfi.de</a></p>
         </div>
       </div>
       <Options interval={updateInterval} setInterval={setUpdateInterval} setCountdown={setCountdown} countdown={countdown} setSoundOn={setSoundOn}/>
