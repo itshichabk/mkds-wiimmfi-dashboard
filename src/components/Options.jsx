@@ -1,7 +1,7 @@
 import React from 'react'
 import './Options.css'
 
-function Options({setInterval, setCountdown, countdown, setSoundOn}) {
+function Options({interval, setInterval, setCountdown, countdown, setSoundOn}) {
   return (
     <div className='options'>
       <div>
@@ -9,7 +9,7 @@ function Options({setInterval, setCountdown, countdown, setSoundOn}) {
           <p>Time until next update : {countdown} second{countdown > 1 ? 's' : null}</p>
           <div className="flex">
           <label htmlFor="interval">Update interval : </label>
-            <select name="interval" defaultValue={5} id="interval" onChange={(ev) => {setInterval(ev.target.value); setCountdown(ev.target.value)}}>
+            <select name="interval" defaultValue={interval} id="interval" onChange={(ev) => {setInterval(ev.target.value); setCountdown(ev.target.value)}}>
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="15">15</option>

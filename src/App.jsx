@@ -5,7 +5,7 @@ import Options from './components/Options';
 import Footer from './components/Footer';
 
 function App() {
-  const defaultInterval = 5;
+  const defaultInterval = 10;
   const [updateInterval, setUpdateInterval] = useState(defaultInterval);
   const [countdown, setCountdown] = useState(defaultInterval);
   const [soundOn, setSoundOn] = useState(false);
@@ -23,7 +23,7 @@ function App() {
           <p>Data scraped from <a href="https://wiimmfi.de/stats/game/mariokartds" target='_blank'>wiimmfi.de</a>{/*. Frontend powered by React. Backend powered by Puppeteer, Express.js and Node.*/}</p>
         </div>
       </div>
-      <Options setInterval={setUpdateInterval} setCountdown={setCountdown} countdown={countdown} setSoundOn={setSoundOn}/>
+      <Options interval={updateInterval} setInterval={setUpdateInterval} setCountdown={setCountdown} countdown={countdown} setSoundOn={setSoundOn}/>
       <Table updateInterval={updateInterval} countdown={countdown} soundOn={soundOn}/>
       <Footer/>
     </main>
