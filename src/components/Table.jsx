@@ -24,7 +24,7 @@ export default function Table({updateInterval, countdown, soundOn}) {
         setFetching(true);
         try
         {
-            const res = await fetch('https://mkds-wiimmfi-dashboard-api-xmsmvtoega-nn.a.run.app');
+            const res = await fetch('https://mkds-wiimmfi-api-xmsmvtoega-ul.a.run.app');
             const playersJSON = await res.json();
 
             if(!firstFetch)
