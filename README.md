@@ -8,6 +8,8 @@ It sends requests in an interval defined by the user (5 to 20 seconds) to a serv
 
 By enabling the sound option, the app will play a sound effect every time a player connects to or disconnects from the game, making matchmaking much easier and faster!
 
+Server source code : https://github.com/itshichabk/mkds-wiimmfi-dashboard-api
+
 ---
 
 ### What's next?
