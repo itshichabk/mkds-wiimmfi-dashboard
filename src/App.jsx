@@ -20,7 +20,6 @@ function App() {
       <div className='title'>
         <div>
           <h1>MARIO KART DS Wiimmfi Dashboard</h1>
-          {/*<h4>by <a href="https://github.com/itshichabk" target='_blank'>itshichabk</a></h4>*/}
           <p>Data scraped from <a href="https://wiimmfi.de/stats/game/mariokartds" target='_blank'>wiimmfi.de</a>{/*. Frontend powered by React. Backend powered by Puppeteer, Express.js and Node.*/}</p>
         </div>
       </div>

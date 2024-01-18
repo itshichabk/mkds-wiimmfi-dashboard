@@ -44,6 +44,7 @@ h1, h2, h3
     font-size: 48px;
     line-height: 0.8em;
     color: yellow;
+    margin-top: 0.1em;
 }
 
 .title h4, .title a
