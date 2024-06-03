@@ -19,3 +19,11 @@ footer a
 {
     color: yellow;
 }
+
+
+footer a img
+{
+    border: 0px;
+    height: 36px;
+    margin-top: 8px;
+}

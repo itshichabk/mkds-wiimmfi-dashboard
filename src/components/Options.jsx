@@ -19,7 +19,7 @@ function Options({interval, setInterval, setCountdown, countdown, setSoundOn}) {
         </div>
         <div className='sound flex'>
           <label htmlFor="sound">Enable sound when players join/disconnect? </label>
-          <input type="checkbox" name="sound" id="sound" onChange={(ev) => { setSoundOn(ev.target.checked); console.log(ev.target.checked); }}/>
+          <input type="checkbox" name="sound" id="sound" onChange={(ev) => { setSoundOn(ev.target.checked); }}/>
         </div>
       </div>
     </div>
