@@ -5,8 +5,10 @@ import './Table.css'
 
 import joinSound from '../assets/join.wav'
 import leaveSound from '../assets/leave.wav'
+import joinIcon from '../assets/join.png'
+import leaveIcon from '../assets/leave.png'
 
-export default function Table({updateInterval, countdown, soundOn}) {
+export default function Table({updateInterval, countdown, soundOn, notificationsOn}) {
 
     const [players, setPlayers] = useState([]);
     const [fetching, setFetching] = useState(false);
@@ -18,6 +20,8 @@ export default function Table({updateInterval, countdown, soundOn}) {
 
     const [playJoin] = useSound(joinSound);
     const [playLeave] = useSound(leaveSound);
+
+    const [userInteracted, setUserInteracted] = useState(false);  // New state to track user interaction, necessary for audio to play again after a page refresh (see console warning)
 
     async function fetchPlayers()
     {
@@ -49,15 +53,50 @@ export default function Table({updateInterval, countdown, soundOn}) {
         setFetching(false);
     }
 
+    // Detect user interaction to allow sound
+    const handleUserInteraction = () => {
+        setUserInteracted(true);
+    };
+
+    useEffect(() => {
+        // If sound is on but no user interaction yet, wait for a user click
+        if (soundOn && !userInteracted) {
+            window.addEventListener('click', handleUserInteraction, { once: true });
+        }
+    }, [soundOn, userInteracted]);
+
     useEffect(() => {
         setLeft(left);
         setJoined(joined);
 
-        if(soundOn) {
-            if(joined.length != 0) { playJoin(); }
-            else if(left.length != 0) { playLeave(); }    
+        if (soundOn && userInteracted) {
+            if (joined.length !== 0) playJoin();
+            if (left.length !== 0) playLeave();
         }
 
+        // Send a notification when a player joins
+        if (joined.length !== 0 && Notification.permission === "granted" && notificationsOn) {
+            joined.forEach(player => {
+                const notification = new Notification(`${player.name} Joined`, {
+                    body: 'Someone joined the game!',
+                    icon: joinIcon
+                });
+                notification.onclick = function() {
+                    window.focus();  // Brings the tab back into focus
+                };
+            });
+        }
+        else if(left.length !== 0 && Notification.permission === "granted" && notificationsOn) {
+            left.forEach(player => {
+                const notification = new Notification(`${player.name} Left`, {
+                    body: 'Someone has left the game!',
+                    icon: leaveIcon
+                });
+                notification.onclick = function() {
+                    window.focus();  // Brings the tab back into focus
+                };
+            });
+        }
     }, [joined, left])
 
     useEffect(() => {
@@ -92,7 +131,15 @@ export default function Table({updateInterval, countdown, soundOn}) {
                 </>
                 : null
             }
-            { fetching && !firstFetch ? <p>Updating...</p> : null }
+             {fetching && !firstFetch ? <p>Updating...</p> : null}
+            {/* Overlay that darkens the page */}
+            {!userInteracted && soundOn && (
+                <div className="overlay" onClick={handleUserInteraction}>
+                    <div className="overlay-message">
+                        <p>Please click anywhere to keep sound enabled.</p>
+                    </div>
+                </div>
+            )} 
         </div>
     )
 }

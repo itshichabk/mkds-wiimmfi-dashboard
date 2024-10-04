@@ -1,3 +1,27 @@
+/* Overlay that covers the whole page */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);  /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;  /* Ensure it appears above everything */
+}
+
+/* Centered message */
+.overlay-message {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+}
+
 table, th, td
 {
     border: 2px solid white;
