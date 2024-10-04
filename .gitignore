@@ -30,8 +30,3 @@ build
 *.sw?
 
 api/
-src/assets/bodsfont.ttf
-src/assets/dsfont.ttf
-src/assets/NDS12converted.ttf
-src/assets/tiny.ttf.bak
-src/assets/vertopal.com_tiny_spaces_fixed.ttf
