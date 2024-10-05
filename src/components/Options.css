@@ -31,7 +31,7 @@ p, label, span
 
 option
 {
-    font-size: 21px !important
+    font-size: 14px !important
 }
 
 input[type=checkbox]
@@ -43,8 +43,8 @@ input[type=checkbox]
 
 select
 {
-    width: 1.7em;
-    height: 1.2em;
+    width: 3.2em;
+    height:2em;
 }
 
 .flex

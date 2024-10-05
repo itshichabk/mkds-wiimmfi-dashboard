@@ -58,13 +58,13 @@ body
 *
 {
     font-family: "ds_bios";
-    font-size: 24px;
+    font-size: 14px;
     box-sizing: border-box;
 }
 
 @font-face {
     font-family: ds_bios;
-    src: url("assets/ds_bios.ttf");
+    src: url("assets/tiny.ttf");
 }
 
 @font-face {
