@@ -14,8 +14,4 @@ API server source code : https://github.com/itshichabk/mkds-wiimmfi-dashboard-ap
 
 ---
 
-### What's next?
-- [ ] Parse special DS characters like hearts and other symbols
-- [ ] Send notification when someone joins? (Popup? Link Discord users?)
-
-If you have more suggestions, please let me know!
+If you have new ideas or suggestions, please let me know!
