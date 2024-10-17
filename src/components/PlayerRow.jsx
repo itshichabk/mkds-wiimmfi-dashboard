@@ -2,7 +2,10 @@ import React, { useEffect } from 'react'
 import './PlayerRow.css'
 
 function PlayerRow({player, joined}) {
-
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(player.name, 'text/html');
+    const playerName = doc.body.textContent;
+    
     return (
     <tr className=
         { joined ? "joined" :
@@ -11,7 +14,7 @@ function PlayerRow({player, joined}) {
           player.status == 4 ? "searching friends" : 
           player.status == 5 ? "friends" : ""}>
 
-        <td>{player.name}</td>
+        <td>{playerName}</td>
         <td>{player.fc}</td>
 
         { player.status == 0 ? <td>Connecting</td> : null }
