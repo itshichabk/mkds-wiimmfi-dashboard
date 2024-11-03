@@ -28,7 +28,17 @@ export default function Table({updateInterval, countdown, soundOn, notifications
         setFetching(true);
         try
         {
-            const res = await fetch('https://mkds-wiimmfi-api-xmsmvtoega-ul.a.run.app');
+            let res = null;
+            try
+            {
+                res = await fetch('https://mkdsapi.unprojet.lol');
+            }
+            catch(e)
+            {
+                console.log("Falling back to Google Cloud server...");
+                res = await fetch('https://mkds-wiimmfi-api-xmsmvtoega-ul.a.run.app');
+            }
+
             const playersJSON = await res.json();
 
             if(!firstFetch)
