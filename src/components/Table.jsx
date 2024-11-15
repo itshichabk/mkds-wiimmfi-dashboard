@@ -50,9 +50,24 @@ export default function Table({updateInterval, countdown, soundOn, notifications
                 setJoined(joinedArr);
             }
 
-            setPlayers(playersJSON);
-            if(firstFetch) { setFirstFetch(false); }
-            setFetchSuccess(true);
+            /*
+                This issue appeared since I recently hosted the API on a personal server instead of Google Cloud Run (still used as a fallback).
+
+                After not receiving requests for a long time, the server takes longer to fetch players and responds with "{}" and error 500,
+                which would cause the entire site to crash because it expects an array rather than an object.
+                Below is a temporary solution to try to mitigate that issue.
+            */
+            if(Array.isArray(playersJSON))
+            {
+                setPlayers(playersJSON);
+                if(firstFetch) { setFirstFetch(false); }
+                setFetchSuccess(true);
+            }
+            else
+            {
+                setFetchSuccess(false);
+            }
+
         }
         catch(e)
         {
