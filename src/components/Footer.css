@@ -11,7 +11,7 @@ main footer
 footer p, footer a
 {
     margin: 0;
-    line-height: 1em;
+    line-height: 1.15em;
     font-size: 14px;
 }
 
@@ -26,4 +26,15 @@ footer a img
     border: 0px;
     height: 36px;
     margin-top: 8px;
+}
+
+footer p:first-child
+{
+    margin-bottom: 0.5em;
+}
+
+footer p:last-child
+{
+    font-style: italic;
+    color: rgb(195, 195, 195);
 }

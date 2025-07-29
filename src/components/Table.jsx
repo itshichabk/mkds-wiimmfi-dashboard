@@ -29,15 +29,8 @@ export default function Table({updateInterval, countdown, soundOn, notifications
         try
         {
             let res = null;
-            try
-            {
-                res = await fetch('https://mkdsapi.unprojet.lol');
-            }
-            catch(e)
-            {
-                console.log("Falling back to Google Cloud server...");
-                res = await fetch('https://mkds-wiimmfi-api-xmsmvtoega-ul.a.run.app');
-            }
+            // API is now fully running on a personal home server, removed Google Cloud Run server fallback.
+            res = await fetch('https://mkdsapi.unprojet.lol');
 
             const playersJSON = await res.json();
 
@@ -51,7 +44,7 @@ export default function Table({updateInterval, countdown, soundOn, notifications
             }
 
             /*
-                This issue appeared since I recently hosted the API on a personal server instead of Google Cloud Run (still used as a fallback).
+                This issue appeared since I recently hosted the API on a personal server instead of Google Cloud Run.
 
                 After not receiving requests for a long time, the server takes longer to fetch players and responds with "{}" and error 500,
                 which would cause the entire site to crash because it expects an array rather than an object.
@@ -156,7 +149,7 @@ export default function Table({updateInterval, countdown, soundOn, notifications
                 </>
                 : null
             }
-             {fetching && !firstFetch ? <p>Updating...</p> : null}
+            {fetching && !firstFetch ? <p>Updating...</p> : null}
             {/* Overlay that darkens the page */}
             {!userInteracted && soundOn && (
                 <div className="overlay" onClick={handleUserInteraction}>
