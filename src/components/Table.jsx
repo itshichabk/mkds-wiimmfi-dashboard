@@ -30,7 +30,7 @@ export default function Table({updateInterval, countdown, soundOn, notifications
         {
             let res = null;
             // API is now fully running on a personal home server, removed Google Cloud Run server fallback.
-            res = await fetch('https://mkdsapi.unprojet.lol');
+            res = await fetch('https://mkdsapi.itshichabk.io');
 
             const playersJSON = await res.json();
 
